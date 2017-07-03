@@ -1,0 +1,469 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.2 handleAction(s) · Redux Actions</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="combineActions.html" />
+    
+    
+    <link rel="prev" href="createAction.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Read Me
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction/">
+            
+                <a href="../introduction/">
+            
+                    
+                    1. Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../introduction/Motivation.html">
+            
+                <a href="../introduction/Motivation.html">
+            
+                    
+                    1.1 Motivation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../introduction/Tutorial.html">
+            
+                <a href="../introduction/Tutorial.html">
+            
+                    
+                    1.2 Tutorial
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    2. API Reference
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="createAction.html">
+            
+                <a href="createAction.html">
+            
+                    
+                    2.1 createAction(s)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="handleAction.html">
+            
+                <a href="handleAction.html">
+            
+                    
+                    2.2 handleAction(s)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="combineActions.html">
+            
+                <a href="combineActions.html">
+            
+                    
+                    2.3 combineActions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../middleware/">
+            
+                <a href="../middleware/">
+            
+                    
+                    3. Middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../ExternalResources.html">
+            
+                <a href="../ExternalResources.html">
+            
+                    
+                    4. External Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../ChangeLog.html">
+            
+                <a href="../ChangeLog.html">
+            
+                    
+                    5. Change Log
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Contributors.html">
+            
+                <a href="../Contributors.html">
+            
+                    
+                    6. Contributors
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >2.2 handleAction(s)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="api-reference-for-handleactions">API Reference for handleAction(s)</h1>
+<ul>
+<li><a href="#methods">Methods</a><ul>
+<li><a href="#handleaction">handleAction</a><ul>
+<li><a href="#handleactiontype-reducer-defaultstate"><code>handleAction(type, reducer, defaultState)</code></a></li>
+<li><a href="#handleactiontype-reducermap-defaultstate"><code>handleAction(type, reducerMap, defaultState)</code></a></li>
+</ul>
+</li>
+<li><a href="#handleactions">handleActions</a><ul>
+<li><a href="#handleactionsreducermap-defaultstate"><code>handleActions(reducerMap, defaultState)</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h3 id="handleaction">handleAction</h3>
+<pre class="language-"><code class="lang-js"><span class="token function">handleAction</span><span class="token punctuation">(</span>
+  type<span class="token punctuation">,</span>
+  reducer <span class="token operator">|</span> reducerMap <span class="token operator">=</span> Identity<span class="token punctuation">,</span>
+  defaultState<span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<p>Wraps a reducer so that it only handles Flux Standard Actions of a certain type.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> handleAction <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux-actions&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="handleactiontype-reducer-defaultstate"><code>handleAction(type, reducer, defaultState)</code></h4>
+<p>If a <code>reducer</code> function is passed, it is used to handle both normal actions and failed actions. (A failed action is analogous to a rejected promise.) You can use this form if you know a certain type of action will never fail, like the increment example above.</p>
+<p>If the reducer argument (<code>reducer</code>) is <code>undefined</code>, then the identity function is used.</p>
+<p>The third parameter <code>defaultState</code> is required, and is used when <code>undefined</code> is passed to the reducer.</p>
+<h6 id="example">EXAMPLE</h6>
+<pre class="language-"><code class="lang-js"><span class="token function">handleAction</span><span class="token punctuation">(</span><span class="token string">&apos;APP/COUNTER/INCREMENT&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+  counter<span class="token punctuation">:</span> state<span class="token punctuation">.</span>counter <span class="token operator">+</span> action<span class="token punctuation">.</span>payload<span class="token punctuation">.</span>amount<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span> defaultState<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="handleactiontype-reducermap-defaultstate"><code>handleAction(type, reducerMap, defaultState)</code></h4>
+<p>Otherwise, you can specify separate reducers for <code>next()</code> and <code>throw()</code> using the <code>reducerMap</code> form. This API is inspired by the ES6 generator interface.</p>
+<p>If the reducer argument (<code>reducerMap</code>) is <code>undefined</code>, then the identity function is used.</p>
+<h6 id="example">EXAMPLE</h6>
+<pre class="language-"><code class="lang-js"><span class="token function">handleAction</span><span class="token punctuation">(</span><span class="token string">&apos;FETCH_DATA&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token function">next</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token keyword">throw</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> defaultState<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>If either <code>next()</code> or <code>throw()</code> are <code>undefined</code> or <code>null</code>, then the identity function is used for that reducer.</p>
+<h3 id="handleactions">handleActions</h3>
+<pre class="language-"><code class="lang-js"><span class="token function">handleActions</span><span class="token punctuation">(</span>
+  reducerMap<span class="token punctuation">,</span>
+  defaultState<span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<p>Creates multiple reducers using <code>handleAction()</code> and combines them into a single reducer that handles multiple actions. Accepts a map where the keys are passed as the first parameter to <code>handleAction()</code> (the action type), and the values are passed as the second parameter (either a reducer or reducer map). The map must not be empty.</p>
+<p>If <code>reducerMap</code> has a recursive structure, its leaves are used as reducers, and the action type for each leaf is the path to that leaf. If a node&apos;s only children are <code>next()</code> and <code>throw()</code>, the node will be treated as a reducer. If the leaf is <code>undefined</code> or <code>null</code>, the identity function is used as the reducer. Otherwise, the leaf should be the reducer function. When using this form, you can pass an object with key <code>namespace</code> as the last positional argument (the default is <code>/</code>).</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> handleActions <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux-actions&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="handleactionsreducermap-defaultstate"><code>handleActions(reducerMap, defaultState)</code> </h4>
+<p>The second parameter <code>defaultState</code> is required, and is used when <code>undefined</code> is passed to the reducer.</p>
+<p>(Internally, <code>handleActions()</code> works by applying multiple reducers in sequence using <a href="https://github.com/acdlite/reduce-reducers" target="_blank">reduce-reducers</a>.)</p>
+<h6 id="example">EXAMPLE</h6>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> reducer <span class="token operator">=</span> <span class="token function">handleActions</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  INCREMENT<span class="token punctuation">:</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    counter<span class="token punctuation">:</span> state<span class="token punctuation">.</span>counter <span class="token operator">+</span> action<span class="token punctuation">.</span>payload
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+  DECREMENT<span class="token punctuation">:</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    counter<span class="token punctuation">:</span> state<span class="token punctuation">.</span>counter <span class="token operator">-</span> action<span class="token punctuation">.</span>payload
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> counter<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="createAction.html" class="navigation navigation-prev " aria-label="Previous page: 2.1 createAction(s)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="combineActions.html" class="navigation navigation-next " aria-label="Next page: 2.3 combineActions">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.2 handleAction(s)","level":"1.3.2","depth":2,"next":{"title":"2.3 combineActions","level":"1.3.3","depth":2,"path":"docs/api/combineActions.md","ref":"docs/api/combineActions.md","articles":[]},"previous":{"title":"2.1 createAction(s)","level":"1.3.1","depth":2,"path":"docs/api/createAction.md","ref":"docs/api/createAction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","github","anchorjs"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/acdlite/redux-actions/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/acdlite/redux-actions/tree/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchorjs":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Redux Actions","gitbook":">= 3.0.0"},"file":{"path":"docs/api/handleAction.md","mtime":"2017-07-03T05:53:40.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-03T06:06:20.127Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.1.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-anchorjs/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

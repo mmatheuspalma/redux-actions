@@ -1,0 +1,601 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.1 createAction(s) · Redux Actions</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="handleAction.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Read Me
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction/">
+            
+                <a href="../introduction/">
+            
+                    
+                    1. Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../introduction/Motivation.html">
+            
+                <a href="../introduction/Motivation.html">
+            
+                    
+                    1.1 Motivation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../introduction/Tutorial.html">
+            
+                <a href="../introduction/Tutorial.html">
+            
+                    
+                    1.2 Tutorial
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    2. API Reference
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="createAction.html">
+            
+                <a href="createAction.html">
+            
+                    
+                    2.1 createAction(s)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="handleAction.html">
+            
+                <a href="handleAction.html">
+            
+                    
+                    2.2 handleAction(s)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="combineActions.html">
+            
+                <a href="combineActions.html">
+            
+                    
+                    2.3 combineActions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../middleware/">
+            
+                <a href="../middleware/">
+            
+                    
+                    3. Middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../ExternalResources.html">
+            
+                <a href="../ExternalResources.html">
+            
+                    
+                    4. External Resources
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../ChangeLog.html">
+            
+                <a href="../ChangeLog.html">
+            
+                    
+                    5. Change Log
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Contributors.html">
+            
+                <a href="../Contributors.html">
+            
+                    
+                    6. Contributors
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >2.1 createAction(s)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="api-reference-for-createactions">API Reference for createAction(s)</h1>
+<ul>
+<li><a href="#methods">Methods</a><ul>
+<li><a href="#createaction">createAction</a><ul>
+<li><a href="#createactiontype"><code>createAction(type)</code></a></li>
+<li><a href="#createactiontype-payloadcreator"><code>createAction(type, payloadCreator)</code></a></li>
+<li><a href="#createactiontype-payloadcreator-metacreator"><code>createAction(type, payloadCreator, metaCreator)</code></a></li>
+</ul>
+</li>
+<li><a href="#createactions">createActions</a><ul>
+<li><a href="#createactionsactionmap"><code>createActions(actionMap)</code></a></li>
+<li><a href="#createactionsactionmap-identityactions"><code>createActions(actionMap, ...identityActions)</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="methods">Methods</h2>
+<h3 id="createaction">createAction</h3>
+<pre class="language-"><code class="lang-js"><span class="token function">createAction</span><span class="token punctuation">(</span>
+  type<span class="token punctuation">,</span>
+  payloadCreator <span class="token operator">=</span> Identity<span class="token punctuation">,</span>
+  <span class="token operator">?</span>metaCreator
+<span class="token punctuation">)</span>
+</code></pre>
+<p>Wraps an action creator so that its return value is the payload of a Flux Standard Action.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> createAction <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux-actions&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<p><strong>NOTE:</strong> The more correct name for this function is probably <code>createActionCreator()</code>, but that seems a bit redundant.</p>
+<h4 id="createactiontype"><code>createAction(type)</code> </h4>
+<p>Calling <code>createAction</code> with a <code>type</code> will return an action creator for dispatching actions. <code>type</code> must implement <code>toString</code> and is the only required parameter for <code>createAction</code>.</p>
+<h6 id="example">EXAMPLE</h6>
+<pre class="language-"><code class="lang-js"><span class="token keyword">export</span> <span class="token keyword">const</span> increment <span class="token operator">=</span> <span class="token function">createAction</span><span class="token punctuation">(</span><span class="token string">&apos;INCREMENT&apos;</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> decrement <span class="token operator">=</span> <span class="token function">createAction</span><span class="token punctuation">(</span><span class="token string">&apos;DECREMENT&apos;</span><span class="token punctuation">)</span>
+
+<span class="token function">increment</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// { type: &apos;INCREMENT&apos; }</span>
+<span class="token function">decrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// { type: &apos;DECREMENT&apos; }</span>
+<span class="token function">increment</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// { type: &apos;INCREMENT&apos;, payload: 10 }</span>
+<span class="token function">decrement</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// { type: &apos;DECREMENT&apos;, payload: [1, 42] }</span>
+</code></pre>
+<p>If the payload is an instance of an <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error" target="_blank">Error object</a>,
+ <code>redux-actions</code> will automatically set <code>action.error</code> to true.</p>
+<h6 id="example">EXAMPLE</h6>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> noop <span class="token operator">=</span> <span class="token function">createAction</span><span class="token punctuation">(</span><span class="token string">&apos;NOOP&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> error <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">&apos;not a number&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">expect</span><span class="token punctuation">(</span><span class="token function">noop</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span>deep<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  type<span class="token punctuation">:</span> <span class="token string">&apos;NOOP&apos;</span><span class="token punctuation">,</span>
+  payload<span class="token punctuation">:</span> error<span class="token punctuation">,</span>
+  error<span class="token punctuation">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><code>createAction</code> also returns its <code>type</code> when used as type in <code>handleAction</code> or <code>handleActions</code>.</p>
+<h6 id="example">EXAMPLE</h6>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> noop <span class="token operator">=</span> <span class="token function">createAction</span><span class="token punctuation">(</span><span class="token string">&apos;INCREMENT&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// As parameter in handleAction:</span>
+<span class="token function">handleAction</span><span class="token punctuation">(</span>noop<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token function">next</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token keyword">throw</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// As object key in handleActions:</span>
+<span class="token keyword">const</span> reducer <span class="token operator">=</span> <span class="token function">handleActions</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>noop<span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    counter<span class="token punctuation">:</span> state<span class="token punctuation">.</span>counter <span class="token operator">+</span> action<span class="token punctuation">.</span>payload
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> counter<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Use the identity form to create one-off actions.</p>
+<h6 id="example">EXAMPLE</h6>
+<pre class="language-"><code class="lang-js"><span class="token function">createAction</span><span class="token punctuation">(</span><span class="token string">&apos;ADD_TODO&apos;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token string">&apos;Use Redux&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="createactiontype-payloadcreator"><code>createAction(type, payloadCreator)</code> </h4>
+<p><code>payloadCreator</code> must be a function, <code>undefined</code>, or <code>null</code>. If <code>payloadCreator</code> is <code>undefined</code> or <code>null</code>, the identity function is used.</p>
+<h6 id="example">EXAMPLE</h6>
+<pre class="language-"><code class="lang-js"><span class="token keyword">let</span> noop <span class="token operator">=</span> <span class="token function">createAction</span><span class="token punctuation">(</span><span class="token string">&apos;NOOP&apos;</span><span class="token punctuation">,</span> amount <span class="token operator">=</span><span class="token operator">&gt;</span> amount<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// same as</span>
+noop <span class="token operator">=</span> <span class="token function">createAction</span><span class="token punctuation">(</span><span class="token string">&apos;NOOP&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">expect</span><span class="token punctuation">(</span><span class="token function">noop</span><span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span>deep<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  type<span class="token punctuation">:</span> <span class="token string">&apos;NOOP&apos;</span><span class="token punctuation">,</span>
+  payload<span class="token punctuation">:</span> <span class="token number">42</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="createactiontype-payloadcreator-metacreator"><code>createAction(type, payloadCreator, metaCreator)</code> </h4>
+<p><code>metaCreator</code> is an optional function that creates metadata for the payload. It receives the same arguments as the payload creator, but its result becomes the meta field of the resulting action. If <code>metaCreator</code> is undefined or not a function, the meta field is omitted.</p>
+<h6 id="example">EXAMPLE</h6>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> updateAdminUser <span class="token operator">=</span> <span class="token function">createAction</span><span class="token punctuation">(</span><span class="token string">&apos;UPDATE_ADMIN_USER&apos;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span>updates<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> updates<span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> admin<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+<span class="token function">updateAdminUser</span><span class="token punctuation">(</span><span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">&apos;Foo&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// {</span>
+<span class="token comment" spellcheck="true">//   type: &apos;UPDATE_ADMIN_USER&apos;,</span>
+<span class="token comment" spellcheck="true">//   payload: { name: &apos;Foo&apos; },</span>
+<span class="token comment" spellcheck="true">//   meta: { admin: true },</span>
+<span class="token comment" spellcheck="true">// }</span>
+</code></pre>
+<h3 id="createactions">createActions</h3>
+<pre class="language-"><code class="lang-js"><span class="token function">createActions</span><span class="token punctuation">(</span>
+  actionMap<span class="token punctuation">,</span>
+  <span class="token operator">?</span><span class="token operator">...</span>identityActions<span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+</code></pre>
+<p>Returns an object mapping action types to action creators. The keys of this object are camel-cased from the keys in <code>actionMap</code> and the string literals of <code>identityActions</code>; the values are the action creators.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> createActions <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;redux-actions&apos;</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="createactionsactionmap"><code>createActions(actionMap)</code> </h4>
+<p><code>actionMap</code> is an object which can optionally have a recursive data structure, with action types as keys, and whose values <strong>must</strong> be either</p>
+<ul>
+<li>a function, which is the payload creator for that action</li>
+<li>an array with <code>payload</code> and <code>meta</code> functions in that order, as in <a href="#createaction"><code>createAction</code></a><ul>
+<li><code>meta</code> is <strong>required</strong> in this case (otherwise use the function form above)</li>
+</ul>
+</li>
+<li>an <code>actionMap</code></li>
+</ul>
+<h6 id="example">EXAMPLE</h6>
+<pre class="language-"><code class="lang-js"><span class="token function">createActions</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  ADD_TODO<span class="token punctuation">:</span> todo <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> todo <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// payload creator,</span>
+  REMOVE_TODO<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    todo <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> todo <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// payload creator</span>
+    <span class="token punctuation">(</span>todo<span class="token punctuation">,</span> warn<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> todo<span class="token punctuation">,</span> warn <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// meta</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>If <code>actionMap</code> has a recursive structure, its leaves are used as payload and meta creators, and the action type for each leaf is the combined path to that leaf:</p>
+<h6 id="example">EXAMPLE</h6>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> actionCreators <span class="token operator">=</span> <span class="token function">createActions</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  APP<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    COUNTER<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      INCREMENT<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        amount <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> amount <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        amount <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> key<span class="token punctuation">:</span> <span class="token string">&apos;value&apos;</span><span class="token punctuation">,</span> amount <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      DECREMENT<span class="token punctuation">:</span> amount <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> amount<span class="token punctuation">:</span> <span class="token operator">-</span>amount <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      SET<span class="token punctuation">:</span> undefined <span class="token comment" spellcheck="true">// given undefined, the identity function will be used</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    NOTIFY<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">(</span>username<span class="token punctuation">,</span> message<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> message<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>username<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>message<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">(</span>username<span class="token punctuation">,</span> message<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> username<span class="token punctuation">,</span> message <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">expect</span><span class="token punctuation">(</span>actionCreators<span class="token punctuation">.</span>app<span class="token punctuation">.</span>counter<span class="token punctuation">.</span><span class="token function">increment</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span>deep<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  type<span class="token punctuation">:</span> <span class="token string">&apos;APP/COUNTER/INCREMENT&apos;</span><span class="token punctuation">,</span>
+  payload<span class="token punctuation">:</span> <span class="token punctuation">{</span> amount<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  meta<span class="token punctuation">:</span> <span class="token punctuation">{</span> key<span class="token punctuation">:</span> <span class="token string">&apos;value&apos;</span><span class="token punctuation">,</span> amount<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">expect</span><span class="token punctuation">(</span>actionCreators<span class="token punctuation">.</span>app<span class="token punctuation">.</span>counter<span class="token punctuation">.</span><span class="token function">decrement</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span>deep<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  type<span class="token punctuation">:</span> <span class="token string">&apos;APP/COUNTER/DECREMENT&apos;</span><span class="token punctuation">,</span>
+  payload<span class="token punctuation">:</span> <span class="token punctuation">{</span> amount<span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">expect</span><span class="token punctuation">(</span>actionCreators<span class="token punctuation">.</span>app<span class="token punctuation">.</span>counter<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span>deep<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  type<span class="token punctuation">:</span> <span class="token string">&apos;APP/COUNTER/SET&apos;</span><span class="token punctuation">,</span>
+  payload<span class="token punctuation">:</span> <span class="token number">100</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">expect</span><span class="token punctuation">(</span>actionCreators<span class="token punctuation">.</span>app<span class="token punctuation">.</span><span class="token function">notify</span><span class="token punctuation">(</span><span class="token string">&apos;yangmillstheory&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Hello World&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span>deep<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  type<span class="token punctuation">:</span> <span class="token string">&apos;APP/NOTIFY&apos;</span><span class="token punctuation">,</span>
+  payload<span class="token punctuation">:</span> <span class="token punctuation">{</span> message<span class="token punctuation">:</span> <span class="token string">&apos;yangmillstheory: Hello World&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  meta<span class="token punctuation">:</span> <span class="token punctuation">{</span> username<span class="token punctuation">:</span> <span class="token string">&apos;yangmillstheory&apos;</span><span class="token punctuation">,</span> message<span class="token punctuation">:</span> <span class="token string">&apos;Hello World&apos;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>When using this form, you can pass an object with key <code>namespace</code> as the last positional argument (the default is <code>/</code>).</p>
+<h6 id="example">EXAMPLE</h6>
+<pre class="language-"><code class="lang-js"><span class="token function">createActions</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">&apos;INCREMENT&apos;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> namespace<span class="token punctuation">:</span> <span class="token string">&apos;--&apos;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h4 id="createactionsactionmap-identityactions"><code>createActions(actionMap, ...identityActions)</code></h4>
+<p><code>identityActions</code> is an optional list of positional string arguments that are action type strings; these action types will use the identity payload creator.</p>
+<pre class="language-"><code class="lang-js"><span class="token keyword">const</span> <span class="token punctuation">{</span> actionOne<span class="token punctuation">,</span> actionTwo<span class="token punctuation">,</span> actionThree <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">createActions</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// function form; payload creator defined inline</span>
+  ACTION_ONE<span class="token punctuation">:</span> <span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">:</span> value <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+  <span class="token comment" spellcheck="true">// array form</span>
+  ACTION_TWO<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">(</span>first<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">[</span>first<span class="token punctuation">]</span><span class="token punctuation">,</span>             <span class="token comment" spellcheck="true">// payload</span>
+    <span class="token punctuation">(</span>first<span class="token punctuation">,</span> second<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> second <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// meta</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+  <span class="token comment" spellcheck="true">// trailing action type string form; payload creator is the identity</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">&apos;ACTION_THREE&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">expect</span><span class="token punctuation">(</span><span class="token function">actionOne</span><span class="token punctuation">(</span><span class="token string">&apos;key&apos;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span>deep<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  type<span class="token punctuation">:</span> <span class="token string">&apos;ACTION_ONE&apos;</span><span class="token punctuation">,</span>
+  payload<span class="token punctuation">:</span> <span class="token punctuation">{</span> key<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">expect</span><span class="token punctuation">(</span><span class="token function">actionTwo</span><span class="token punctuation">(</span><span class="token string">&apos;first&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;second&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span>deep<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  type<span class="token punctuation">:</span> <span class="token string">&apos;ACTION_TWO&apos;</span><span class="token punctuation">,</span>
+  payload<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&apos;first&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  meta<span class="token punctuation">:</span> <span class="token punctuation">{</span> second<span class="token punctuation">:</span> <span class="token string">&apos;second&apos;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">expect</span><span class="token punctuation">(</span><span class="token function">actionThree</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span>deep<span class="token punctuation">.</span><span class="token function">equal</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  type<span class="token punctuation">:</span> <span class="token string">&apos;ACTION_THREE&apos;</span><span class="token punctuation">,</span>
+  payload<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 2. API Reference">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="handleAction.html" class="navigation navigation-next " aria-label="Next page: 2.2 handleAction(s)">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.1 createAction(s)","level":"1.3.1","depth":2,"next":{"title":"2.2 handleAction(s)","level":"1.3.2","depth":2,"path":"docs/api/handleAction.md","ref":"docs/api/handleAction.md","articles":[]},"previous":{"title":"2. API Reference","level":"1.3","depth":1,"path":"docs/api/README.md","ref":"docs/api/README.md","articles":[{"title":"2.1 createAction(s)","level":"1.3.1","depth":2,"path":"docs/api/createAction.md","ref":"docs/api/createAction.md","articles":[]},{"title":"2.2 handleAction(s)","level":"1.3.2","depth":2,"path":"docs/api/handleAction.md","ref":"docs/api/handleAction.md","articles":[]},{"title":"2.3 combineActions","level":"1.3.3","depth":2,"path":"docs/api/combineActions.md","ref":"docs/api/combineActions.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","-highlight","github","anchorjs"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/acdlite/redux-actions/"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/acdlite/redux-actions/tree/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchorjs":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Redux Actions","gitbook":">= 3.0.0"},"file":{"path":"docs/api/createAction.md","mtime":"2017-07-03T05:53:40.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-03T06:06:20.127Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.1.1/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-anchorjs/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

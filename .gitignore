@@ -1,0 +1,10 @@
+node_modules
+coverage
+*.log
+es
+lib
+dist
+.idea
+
+# docs generated files
+_book
